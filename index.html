@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Fashion | Loja Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🛍️ Style Fashion</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="carrinho-btn" onclick="mostrarCarrinho()">
+            🛒 Carrinho (<span id="contador">0</span>)
+        </button>
+    </header>
+
+    <main>
+        <section class="banner" id="inicio">
+            <h1>Vista seu estilo!</h1>
+            <p>
+                As melhores tendências da moda
+                estão aqui na Style Fashion.
+            </p>
+            <p>✨ Nova coleção 2026 ✨</p>
+            <a href="#produtos" class="botao">
+                Comprar Agora
+            </a>
+        </section>
+
+        <section class="beneficios">
+            <div>🚚 Entrega para todo o Brasil</div>
+            <div>💳 Pagamento facilitado</div>
+            <div>🔒 Compra segura</div>
+            <div>💖 Novidades toda semana</div>
+        </section>
+
+        <section id="produtos">
+            <h2>🛍️ Nossos Produtos</h2>
+            <p class="subtitulo">
+                Escolha suas peças favoritas!
+            </p>
+
+            <div class="filtros">
+                <button onclick="filtrarProdutos('todos')">
+                    Todos
+                </button>
+                <button onclick="filtrarProdutos('feminino')">
+                    Feminino
+                </button>
+                <button onclick="filtrarProdutos('masculino')">
+                    Masculino
+                </button>
+                <button onclick="filtrarProdutos('acessorios')">
+                    Acessórios
+                </button>
+            </div>
+
+            <div class="produtos-grid" id="lista-produtos">
+                <!-- Produtos criados pelo JavaScript -->
+            </div>
+        </section>
+
+        <section class="promocao">
+            <h2>🔥 Promoção Especial!</h2>
+            <p>
+                Confira nossa coleção e encontre
+                peças incríveis para renovar seu estilo!
+            </p>
+            <a href="#produtos" class="botao">
+                Ver Produtos
+            </a>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2>💖 Sobre a Style Fashion</h2>
+            <p>
+                A Style Fashion é uma loja virtual
+                de roupas e acessórios que busca
+                oferecer moda, conforto e qualidade.
+            </p>
+            <p>
+                Nosso objetivo é ajudar cada cliente
+                a encontrar roupas que combinem com
+                sua personalidade e estilo.
+            </p>
+        </section>
+
+        <section class="informacoes">
+            <h2>📦 Informações da Loja</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🚚 Entregas</h3>
+                    <p>
+                        Enviamos para todo o Brasil.
+                        O prazo depende da sua região.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>💳 Pagamentos</h3>
+                    <p>
+                        Consulte as opções de Pix,
+                        cartão e parcelamento.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔄 Trocas</h3>
+                    <p>
+                        Atendimento para dúvidas
+                        sobre trocas e devoluções.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📏 Tamanhos</h3>
+                    <p>
+                        Consulte os tamanhos
+                        disponíveis de cada produto.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="atendimento" id="contato">
+            <h2>💬 Atendimento Online</h2>
+            <p>
+                Precisa de ajuda para escolher roupas,
+                saber tamanhos ou consultar entregas?
+            </p>
+            <p>
+                Converse com nossa assistente virtual!
+            </p>
+
+            <a href="https://landbot.online/v3/H-3535175-QOPV6HC5JB53O15J/index.html"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="botao">
+    💬 Conversar com StyleBot
+</a>
+
+            <p id="mensagem"></p>
+        </section>
+    </main>
+
+    <footer>
+        <h3>🛍️ Style Fashion</h3>
+        <p>Moda para todos os estilos!</p>
+        <p>📧 contato@stylefashion.exemplo</p>
+        <p>📍 Loja Online - Brasil</p>
+        <p>© 2026 Style Fashion</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <section id="produtos">
+    <h2>🛍️ Nossa Coleção</h2>
+    <p class="subtitulo">
+        Encontre roupas e acessórios para todos os estilos!
+    </p>
+
+    <div class="ferramentas">
+        <input
+            type="search"
+            id="pesquisa"
+            placeholder="🔍 Pesquisar roupas..."
+            oninput="atualizarProdutos()"
+        >
+
+        <select id="ordenacao" onchange="atualizarProdutos()">
+            <option value="padrao">Ordenar por</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="nome">Nome A-Z</option>
+        </select>
+    </div>
+
+    <div class="filtros">
+        <button onclick="filtrarProdutos('todos')">Todos</button>
+        <button onclick="filtrarProdutos('feminino')">Feminino</button>
+        <button onclick="filtrarProdutos('masculino')">Masculino</button>
+        <button onclick="filtrarProdutos('acessorios')">Acessórios</button>
+        <button onclick="filtrarProdutos('calcados')">Calçados</button>
+    </div>
+
+    <p id="quantidade-produtos"></p>
+
+    <div class="produtos-grid" id="lista-produtos"></div>
+</section>
+</body>
+</html>
